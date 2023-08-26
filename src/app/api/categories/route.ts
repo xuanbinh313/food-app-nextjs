@@ -1,5 +1,4 @@
 import { prisma } from "@/utils/connect"
-import { PrismaClient } from "@prisma/client"
 import { NextRequest, NextResponse } from "next/server"
 
 

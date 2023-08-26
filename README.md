@@ -12,6 +12,18 @@ yarn dev
 pnpm dev
 ```
 
+Second, run docker postgre database if system not have
+
+```bash
+# go to directory docker
+cd src/docker
+docker-compose up -d
+# remove docker
+docker-compose down
+# remove docker and volume
+docker-compose down -v
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
