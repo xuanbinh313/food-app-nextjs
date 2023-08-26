@@ -7,7 +7,11 @@ export const GET = async (req: NextRequest) => {
     const { searchParams } = new URL(req.url)
     const cat = searchParams.get('cat')
     try {
-        const categories = await prisma.category.findMany()
+        const categories = await prisma.product.findMany({
+            where: {
+                ...(cat ? { catSlug: cat } : { isFeatured: true }),
+            }
+        })
         return NextResponse.json(categories)
     } catch (error) {
         return NextResponse.json({ message: "Some thing went wrong" }, { status: 500 })
